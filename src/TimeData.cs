@@ -13,8 +13,10 @@ namespace FluentBehaviourTree
         public TimeData(float deltaTime)
         {
             this.deltaTime = deltaTime;
+            this.runningTime = 0;
         }
 
         public float deltaTime;
+        public float runningTime;
     }
 }

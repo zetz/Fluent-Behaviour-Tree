@@ -19,17 +19,29 @@ namespace FluentBehaviourTree
         /// Function to invoke for the action.
         /// </summary>
         private Func<TimeData, BehaviourTreeStatus> fn;
-        
+
+        /// <summary>
+        /// node timer
+        /// </summary>
+        private TimeData timer;
 
         public ActionNode(string name, Func<TimeData, BehaviourTreeStatus> fn)
         {
             this.name=name;
             this.fn=fn;
+            this.timer = new TimeData();
         }
 
         public BehaviourTreeStatus Tick(TimeData time)
         {
-            return fn(time);
+            timer.deltaTime = time.deltaTime;
+            var status = fn(timer);
+            if (status == BehaviourTreeStatus.Running) {
+                timer.runningTime += time.deltaTime;
+            } else {
+                timer.runningTime = 0;
+            }
+            return status;
         }
     }
 }
