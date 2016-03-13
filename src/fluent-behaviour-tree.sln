@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fluent-behaviour-tree", "fl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "..\tests\tests.csproj", "{EF32B162-43DA-4295-84C3-535A50BEAFD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "..\ConsoleApplication1\ConsoleApplication1.csproj", "{20AB3396-ED55-4A52-BC1B-7C66834BB152}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EF32B162-43DA-4295-84C3-535A50BEAFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF32B162-43DA-4295-84C3-535A50BEAFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF32B162-43DA-4295-84C3-535A50BEAFD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20AB3396-ED55-4A52-BC1B-7C66834BB152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20AB3396-ED55-4A52-BC1B-7C66834BB152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20AB3396-ED55-4A52-BC1B-7C66834BB152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20AB3396-ED55-4A52-BC1B-7C66834BB152}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
