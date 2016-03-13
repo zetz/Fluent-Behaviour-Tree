@@ -11,6 +11,11 @@ namespace FluentBehaviourTree
     public class ActionNode : IBehaviourTreeNode
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string Name => name;
+
+        /// <summary>
         /// The name of the node.
         /// </summary>
         private string name;
@@ -42,6 +47,10 @@ namespace FluentBehaviourTree
                 timer.runningTime = 0;
             }
             return status;
+        }
+
+        public void Traverse(ref int depth, Action<IBehaviourTreeNode> func) {
+            func(this);
         }
     }
 }

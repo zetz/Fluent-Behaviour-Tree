@@ -11,6 +11,11 @@ namespace FluentBehaviourTree
     public class SelectorNode : IParentBehaviourTreeNode
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string Name => name;
+
+        /// <summary>
         /// The name of the node.
         /// </summary>
         private string name;
@@ -45,6 +50,15 @@ namespace FluentBehaviourTree
         public void AddChild(IBehaviourTreeNode child)
         {
             children.Add(child);
+        }
+
+        public void Traverse(ref int depth, Action<IBehaviourTreeNode> func) {
+            func(this);
+            depth += 1;
+            foreach (var n in children) {
+                func(n);
+            }
+            depth -= 1;
         }
     }
 }

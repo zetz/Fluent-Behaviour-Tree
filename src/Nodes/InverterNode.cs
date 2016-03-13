@@ -11,6 +11,11 @@ namespace FluentBehaviourTree
     public class InverterNode : IParentBehaviourTreeNode
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string Name => name;
+
+        /// <summary>
         /// Name of the node.
         /// </summary>
         private string name;
@@ -58,6 +63,13 @@ namespace FluentBehaviourTree
             }
 
             this.childNode = child;
+        }
+
+        public void Traverse(ref int depth, Action<IBehaviourTreeNode> func) {
+            func(this);
+            depth += 1;
+            func(childNode);
+            depth -= 1;
         }
     }
 }
